@@ -3,38 +3,39 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "ad8a60a1b393f827c09a797b6d1beac1",
-"assets/assets/icons/heart.svg": "555d4048572266cb6ac650c49cd8e626",
-"assets/assets/icons/help-circle.svg": "29ee6fb7515fcdac1e8a2968487bcfe4",
-"assets/assets/icons/home.svg": "5df55adabd37bbe7b98132c3c1940ef5",
-"assets/assets/icons/meal.svg": "ae1b0dfff7dc26cadaa24adf7178d71e",
-"assets/assets/icons/shopping_bag.svg": "7713c3f843958b55a1dfe4e3c444ad60",
-"assets/assets/icons/user.svg": "f36390ec068be03f1bb0d25cb69f525a",
-"assets/assets/images/apple.png": "d217aac32611580558b901c83380f1ca",
-"assets/assets/images/empty_plate.svg": "09a1473330fd9ea6192379a65e509c53",
-"assets/assets/images/google.png": "6c600f486523a50b8eb1352cb0df1787",
-"assets/assets/images/Zazu.One.png": "02bac2a0a77076b71ebbf0846dbc23c0",
-"assets/assets/images/ZazuLogo.png": "cf24d86ea3d0a6cbbca880e2cbf277dc",
-"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
-"assets/NOTICES": "ae975357a22b74091321ffc60193d086",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
-"canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
-"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
-"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
-"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
+  "version.json": "117da114836721faee319866febe4fec",
+"index.html": "757f792946a9189dbf00ea7410fce1a0",
+"/": "757f792946a9189dbf00ea7410fce1a0",
+"main.dart.js": "c0e5ac7a35709841473225704bdb5172",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"flutter.js": "eb2682e33f25cd8f1fc59011497c35f8",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "d978f70605c268a2e4b5025e1fa4e2ed",
-"/": "d978f70605c268a2e4b5025e1fa4e2ed",
-"main.dart.js": "cca7b23effcdd0ad81ec392333c15a70",
+"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "70eb68538b3c6fb62ea55f4061b2f821",
-"version.json": "545fbe2220a794080a134bf9faf1ce53"
+"assets/AssetManifest.json": "a429dd1cbf2fb84218d452393fd0aa40",
+"assets/NOTICES": "faf75f5a297f67e0fa6f8274f63bb537",
+"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
+"assets/shaders/ink_sparkle.frag": "40f1200a5983473069111afa2ac15090",
+"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
+"assets/assets/images/empty_plate.svg": "09a1473330fd9ea6192379a65e509c53",
+"assets/assets/images/ZazuLogo.png": "cf24d86ea3d0a6cbbca880e2cbf277dc",
+"assets/assets/images/apple.png": "d217aac32611580558b901c83380f1ca",
+"assets/assets/images/Zazu.One.png": "02bac2a0a77076b71ebbf0846dbc23c0",
+"assets/assets/images/google.png": "6c600f486523a50b8eb1352cb0df1787",
+"assets/assets/icons/user.svg": "f36390ec068be03f1bb0d25cb69f525a",
+"assets/assets/icons/home.svg": "5df55adabd37bbe7b98132c3c1940ef5",
+"assets/assets/icons/shopping_bag.svg": "7713c3f843958b55a1dfe4e3c444ad60",
+"assets/assets/icons/meal.svg": "ae1b0dfff7dc26cadaa24adf7178d71e",
+"assets/assets/icons/help-circle.svg": "29ee6fb7515fcdac1e8a2968487bcfe4",
+"assets/assets/icons/heart.svg": "555d4048572266cb6ac650c49cd8e626",
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -42,7 +43,6 @@ const RESOURCES = {
 const CORE = [
   "main.dart.js",
 "index.html",
-"assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
@@ -141,9 +141,11 @@ self.addEventListener("fetch", (event) => {
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache.
+        // lazily populate the cache only if the resource was successfully fetched.
         return response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone());
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })

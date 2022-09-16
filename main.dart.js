@@ -28869,7 +28869,7 @@ TK(){var s=0,r=A.M(t.z),q=1,p,o,n,m,l,k,j,i,h,g,f
 var $async$TK=A.N(function(a,b){if(a===1){p=b
 s=q}while(true)switch(s){case 0:q=3
 s=6
-return A.Q($.aU8().AV(0,".env"),$async$TK)
+return A.Q($.aU8().AV(0,"env"),$async$TK)
 case 6:j=$.aU8()
 if(!j.a)A.u(new A.XB())
 i=t.N

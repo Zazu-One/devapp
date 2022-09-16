@@ -4,9 +4,10 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "117da114836721faee319866febe4fec",
-"index.html": "5170ec4f62f3adfd6180ca52c18931b1",
-"/": "5170ec4f62f3adfd6180ca52c18931b1",
+"index.html": "df41e251e233eda157a031a5e7722a08",
+"/": "df41e251e233eda157a031a5e7722a08",
 "main.dart.js": "8415f5eb0af948a5779631c4a2cc160e",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
@@ -30,7 +31,11 @@ const RESOURCES = {
 "assets/assets/icons/shopping_bag.svg": "7713c3f843958b55a1dfe4e3c444ad60",
 "assets/assets/icons/meal.svg": "ae1b0dfff7dc26cadaa24adf7178d71e",
 "assets/assets/icons/help-circle.svg": "29ee6fb7515fcdac1e8a2968487bcfe4",
-"assets/assets/icons/heart.svg": "555d4048572266cb6ac650c49cd8e626"
+"assets/assets/icons/heart.svg": "555d4048572266cb6ac650c49cd8e626",
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62"
 };
 
 // The application shell files that are downloaded before a service worker can

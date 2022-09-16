@@ -28905,7 +28905,7 @@ case 3:q=2
 f=p
 k=A.am(f)
 o=A.e(k)
-throw A.c('Can not load .env file.\nDid you forget to crate it or you have an empty .env file.\nTo do it now run `echo "" >> .env` and restart the flutter process.\nFull error:\n'+o)
+throw A.c('Can not load .env file.\nDid you forget to create it or you have an empty .env file.\nTo do it now run `echo "" >> .env` and restart the flutter process.\nFull error:\n'+o)
 s=5
 break
 case 2:s=1

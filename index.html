@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,38 +28,104 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <title>zazu_app</title>
   <link rel="manifest" href="manifest.json">
 
   <style>
+    /* Keeping everything in index.html for faster loading */
     body {
-      background-color: #0A0A2E;
+      background: #0a0a30;
+    }
+
+    @keyframes logo_animation {
+      from {
+        top: 0%;
+        opacity: 0;
+      }
+      to {
+        top: 50%;
+        opacity: 1
+      }
+    }
+
+    /* Safari and Chrome */
+    @-webkit-keyframes logo_animation {
+      from {
+        top: 0%;
+        opacity: 0;
+      }
+      to {
+        top: 50%;
+        opacity: 1;
+      }
+    }
+
+    .logo {
+      margin: 0;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      animation: logo_animation 2s ease-out forwards;
+      animation-iteration-count: 1;
+      /* Safari and Chrome */
+      -webkit-animation: logo_animation 2s ease-out forwards;
+      -webkit-animation-iteration-count: 1;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #0a0a30;
+      }
     }
   </style>
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '1410473858';
+    var serviceWorkerVersion = '646310598';
   </script>
   <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
-</head>
-<body>
+  <script src="flutter.js" defer=""></script>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <script>
-    window.addEventListener('load', function(ev) {
+    function removeSplash() {
+      document.getElementById("splash")?.remove();
+      document.getElementById("splash-branding")?.remove();
+      document.body.style.background = "transparent";
+    }
+  </script>
+</head>
+
+<body>
+  <picture id="splash">
+    <source
+      srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x"
+      media="(prefers-color-scheme: light)">
+    <source
+      srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x"
+      media="(prefers-color-scheme: dark)">
+    <img class="logo" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+  </picture>
+  <script>
+    window.addEventListener('load', function (ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         }
-      }).then(function(engineInitializer) {
+      }).then(function (engineInitializer) {
         return engineInitializer.initializeEngine();
-      }).then(function(appRunner) {
+      }).then(function (appRunner) {
         return appRunner.runApp();
+        removeSplash();
       });
     });
   </script>
+
+
 </body>
+
 </html>

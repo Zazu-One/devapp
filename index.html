@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/devapp/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="zazu_app">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <title>zazu_app</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://unpkg.com/pica/dist/pica.min.js" ></script>
+
+  <style>
+    /* animations */
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes logo-animation {
+      0% {
+        opacity: 0.3;
+        transform: translate(50%, -170%)
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(50%, -50%)
+      }
+    }
+
+    @keyframes rotating-circle {
+      0% {
+        transform: rotate(0deg) translate(130px) rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg) translate(130px) rotate(-360deg);
+      }
+    }
+
+    /* Keeping everything in index.html for faster loading */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0a0a30;
+    }
+
+    #splash-screen {
+      position: fixed;
+      background: #0a0a30;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+    }
+
+    #splash-screen.fade-out {
+      animation: 0.3s fade-out 1.5s ease-out forwards;
+    }
+
+    .circle {
+      width: 30px;
+      height: 30px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      margin: auto;
+
+      animation: rotating-circle 3s linear infinite;
+    }
+
+    .logo {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+
+      animation: logo-animation 1.6s ease-out forwards;
+    }
+
+  </style>
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "3392515113";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer=""></script>
+  <!-- <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> -->
+</head>
+
+<body>
+  <script>
+    window.addEventListener('load', function (ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function (engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function (appRunner) {
+        return appRunner.runApp();
+      });
+    });
+
+  window.removeSplashScreen = function () {
+    var splashScreen = document.getElementById("splash-screen");
+    if (splashScreen) {
+      splashScreen.classList.add('fade-out');
+      splashScreen.onanimationend = () => splashScreen.remove();
+    }
+  }
+  </script>
+
+  <div id="splash-screen">
+    <picture id="splash">
+      <img class="logo"
+        src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAyNCIgaGVpZ2h0PSIxMDI0IiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNTE0LjAwNyAzNDUuNzQyQzUwOS41NzEgMzQ1Ljc0MiA1MDUuOTQyIDM0Mi4xMTMgNTA1Ljk0MiAzMzcuNjc3VjIzOC4wODFDNTA1Ljk0MiAyMzMuNjQ1IDUwOS41NzEgMjMwLjAxNiA1MTQuMDA3IDIzMC4wMTZDNTE4LjQ0MiAyMzAuMDE2IDUyMi4wNzEgMjMzLjY0NSA1MjIuMDcxIDIzOC4wODFWMzM3LjY3N0M1MjIuMDcxIDM0Mi4xNTMgNTE4LjQ4MyAzNDUuNzQyIDUxNC4wMDcgMzQ1Ljc0MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik01MTQuMDA3IDM0Ny43NThDNTA4LjQ0MyAzNDcuNzU4IDUwMy45MjcgMzQzLjI0MiA1MDMuOTI3IDMzNy42NzdWMjM4LjA4MUM1MDMuOTI3IDIzMi41MTYgNTA4LjQ0MyAyMjggNTE0LjAwNyAyMjhDNTE5LjU3MiAyMjggNTI0LjA4OCAyMzIuNTE2IDUyNC4wODggMjM4LjA4MVYzMzcuNjc3QzUyNC4wODggMzQzLjI0MiA1MTkuNTcyIDM0Ny43NTggNTE0LjAwNyAzNDcuNzU4Wk01MTQuMDA3IDIzMi4wMzJDNTEwLjY2MSAyMzIuMDMyIDUwNy45NTkgMjM0LjczNCA1MDcuOTU5IDIzOC4wODFWMzM3LjY3N0M1MDcuOTU5IDM0MS4wMjQgNTEwLjY2MSAzNDMuNzI2IDUxNC4wMDcgMzQzLjcyNkM1MTcuMzU0IDM0My43MjYgNTIwLjA1NiAzNDEuMDI0IDUyMC4wNTYgMzM3LjY3N1YyMzguMDgxQzUyMC4wNTYgMjM0LjczNCA1MTcuMzU0IDIzMi4wMzIgNTE0LjAwNyAyMzIuMDMyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTM4Ny44MzcgMzgyLjE1M0MzODMuNDAxIDM4Mi4xNTMgMzc5Ljc3MiAzNzguNTI0IDM3OS43NzIgMzc0LjA4OVYyOTQuNTMyQzM3OS43NzIgMjkwLjA5NyAzODMuNDAxIDI4Ni40NjggMzg3LjgzNyAyODYuNDY4QzM5Mi4yNzIgMjg2LjQ2OCAzOTUuOTAxIDI5MC4wOTcgMzk1LjkwMSAyOTQuNTMyVjM3NC4wODlDMzk1LjkwMSAzNzguNTY1IDM5Mi4zMTMgMzgyLjE1MyAzODcuODM3IDM4Mi4xNTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzg3LjgzNyAzODQuMTY5QzM4Mi4yNzMgMzg0LjE2OSAzNzcuNzU3IDM3OS42NTMgMzc3Ljc1NyAzNzQuMDg5VjI5NC41MzJDMzc3Ljc1NyAyODguOTY4IDM4Mi4yNzMgMjg0LjQ1MiAzODcuODM3IDI4NC40NTJDMzkzLjQwMiAyODQuNDUyIDM5Ny45MTggMjg4Ljk2OCAzOTcuOTE4IDI5NC41MzJWMzc0LjA4OUMzOTcuOTE4IDM3OS42NTMgMzkzLjQwMiAzODQuMTY5IDM4Ny44MzcgMzg0LjE2OVpNMzg3LjgzNyAyODguNDg0QzM4NC40OTEgMjg4LjQ4NCAzODEuNzg5IDI5MS4xODYgMzgxLjc4OSAyOTQuNTMyVjM3NC4wODlDMzgxLjc4OSAzNzcuNDM1IDM4NC40OTEgMzgwLjEzNyAzODcuODM3IDM4MC4xMzdDMzkxLjE4NCAzODAuMTM3IDM5My44ODYgMzc3LjQzNSAzOTMuODg2IDM3NC4wODlWMjk0LjUzMkMzOTMuODg2IDI5MS4xODYgMzkxLjE4NCAyODguNDg0IDM4Ny44MzcgMjg4LjQ4NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NDAuMTc2IDM4Mi4xNTRDNjM1Ljc0IDM4Mi4xNTQgNjMyLjExMSAzNzguNTI1IDYzMi4xMTEgMzc0LjA5VjI5NC41MzNDNjMyLjExMSAyOTAuMDk4IDYzNS43NCAyODYuNDY5IDY0MC4xNzYgMjg2LjQ2OUM2NDQuNjExIDI4Ni40NjkgNjQ4LjI0IDI5MC4wOTggNjQ4LjI0IDI5NC41MzNWMzc0LjA5QzY0OC4yNCAzNzguNTY1IDY0NC42MTEgMzgyLjE1NCA2NDAuMTc2IDM4Mi4xNTRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNjQwLjE3NiAzODQuMTY5QzYzNC42MTIgMzg0LjE2OSA2MzAuMDk2IDM3OS42NTMgNjMwLjA5NiAzNzQuMDg5VjI5NC41MzJDNjMwLjA5NiAyODguOTY4IDYzNC42MTIgMjg0LjQ1MiA2NDAuMTc2IDI4NC40NTJDNjQ1Ljc0MSAyODQuNDUyIDY1MC4yNTcgMjg4Ljk2OCA2NTAuMjU3IDI5NC41MzJWMzc0LjA4OUM2NTAuMjU3IDM3OS42NTMgNjQ1Ljc0MSAzODQuMTY5IDY0MC4xNzYgMzg0LjE2OVpNNjQwLjE3NiAyODguNDg0QzYzNi44MyAyODguNDg0IDYzNC4xMjggMjkxLjE4NiA2MzQuMTI4IDI5NC41MzJWMzc0LjA4OUM2MzQuMTI4IDM3Ny40MzUgNjM2LjgzIDM4MC4xMzcgNjQwLjE3NiAzODAuMTM3QzY0My41MjMgMzgwLjEzNyA2NDYuMjI1IDM3Ny40MzUgNjQ2LjIyNSAzNzQuMDg5VjI5NC41MzJDNjQ2LjIyNSAyOTEuMTg2IDY0My41MjMgMjg4LjQ4NCA2NDAuMTc2IDI4OC40ODRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNTIzLjg4NSA0MDUuNzE0QzUzMS44NjkgNDA3LjAwNCA1MzkuODkzIDQwNy43NyA1NDcuODM3IDQwOS41NDVDNjA1LjAxNCA0MjIuMjg2IDY1MS40NjYgNDcxLjM5OSA2NjAuODYxIDUyOS4yNjJDNjY3Ljc1NiA1NzEuNjgyIDY1OC40ODIgNjEwLjMxMSA2MzIuODM2IDY0NC43ODZDNTk2LjIyNCA2OTQuMDYxIDU1OS40MDkgNzQzLjA5MyA1MjIuNzk2IDc5Mi4yODZDNTIxLjAyMiA3OTQuNjY1IDUxOS4xNjcgNzk0Ljk4OCA1MTYuNTA2IDc5NS4zNTFDNTEwLjAxNCA3OTYuMTk4IDUwNi4xNDMgNzkzLjY1NyA1MDIuMjMyIDc4OC4zNzVDNDY3LjE5MSA3NDAuOTk2IDQzMS45NDkgNjkzLjc3OCAzOTYuNTA2IDY0Ni43MjJDMzc0Ljg5MyA2MTguMDEyIDM2My4zNjEgNTg1LjkxNSAzNjUuMTc1IDU1MC4wNjlDMzY4LjI0IDQ5MC41NTMgMzk3LjIzMiA0NDcuMjg2IDQ1MC4yMTYgNDIwLjIzQzQ2Ni4yNjQgNDEyLjA0NSA0ODMuNTYyIDQwNy43MyA1MDEuNTg3IDQwNi4zMTlDNTAyLjQzMyA0MDYuMjM4IDUwMy4yOCA0MDUuOTE1IDUwNC4xNjcgNDA1LjcxNEM1MTAuNjk5IDQwNS43MTQgNTE3LjMxMiA0MDUuNzE0IDUyMy44ODUgNDA1LjcxNFpNNTE0LjEyNyA1MDUuMzkxQzQ4Ni45OSA1MDUuMzUxIDQ2NC42OTEgNTI3LjQ4OCA0NjQuNTcgNTU0LjU0NEM0NjQuNDQ5IDU4MS44ODMgNDg2LjYyNyA2MDQuMjYyIDUxMy44ODUgNjA0LjMwMkM1NDEuMDIyIDYwNC4zNDMgNTYzLjMyIDU4Mi4yNDYgNTYzLjQ0MSA1NTUuMTQ5QzU2My41NjIgNTI3Ljc3IDU0MS4zODUgNTA1LjQzMiA1MTQuMTI3IDUwNS4zOTFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzc3LjIzMiA2NTcuNzNDMzUxLjEwMyA2MjMuMDEyIDMzOC45MjYgNTg1LjE4OSAzNDAuOTQyIDU0NS4zMUMzNDMuNTIzIDQ5NS4xNDkgMzYyLjExMSA0NTQuNTg1IDM5Ni4yNjUgNDI0LjAyQzM5NC42NTIgNDIzLjczOCAzOTIuOTk5IDQyMy40NTYgMzkxLjM0NSA0MjMuMjU0QzM0MS43ODkgNDE2LjI3OCAyOTIuMjMyIDQwOS4xMDEgMjQyLjc1NyA0MDEuNjgxQzIzNy4yMzIgNDAwLjgzNSAyMzMuNDAyIDQwMS42ODEgMjI5Ljk3NCA0MDYuMDc3QzIyOC42NDQgNDA3Ljg5MSAyMjcuNzE2IDQwOS4yMjIgMjI4LjA3OSA0MTEuNjgxQzIzNS42MiA0NjMuMjU0IDI0Mi45NTggNTE0LjgyNyAyNTAuNTM5IDU2Ni4zNTlDMjU1Ljg2MSA2MDIuNDg4IDI3My40ODIgNjMxLjIzOCAzMDMuMTIgNjUyLjYwOUMzMjguMTYgNjcwLjYzMyAzNTkuNjkyIDY3OC4wMTIgMzkwLjA1NSA2NzQuNzQ2QzM4NS43ODEgNjY5LjEwMSAzODEuNTQ3IDY2My40NTYgMzc3LjIzMiA2NTcuNzNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNzk0LjQ5MyA0MDYuMDc2Qzc5MS4xMDUgNDAxLjY4MSA3ODcuMjM0IDQwMC44MzQgNzgxLjcxIDQwMS42ODFDNzMyLjE5NCA0MDkuMSA2ODIuNjc4IDQxNi4yNzggNjMzLjEyMiA0MjMuMjU0QzYzMi40MzYgNDIzLjMzNCA2MzEuNzUxIDQyMy40NTUgNjMxLjEwNSA0MjMuNTc2QzY1OC45MjggNDQ5LjMwMiA2NzguNjQ2IDQ4My44NTggNjg0LjczNCA1MjEuNTZDNjkyLjcxOCA1NzAuNzUzIDY4MS43NTEgNjE1Ljg3NCA2NTIuMTk0IDY1NS42NzNDNjQ3LjM5NiA2NjIuMTY1IDY0Mi41MTcgNjY4LjYxNiA2MzcuNzE4IDY3NS4xMDhDNjY3LjA3MyA2NzcuNTI4IDY5Ny4yNzUgNjcwLjAyOCA3MjEuNDI4IDY1Mi42NDlDNzUxLjA2NSA2MzEuMjc4IDc2OC42ODYgNjAyLjUyOCA3NzQuMDA5IDU2Ni4zOTlDNzgxLjU4OSA1MTQuODY2IDc4OC45MjggNDYzLjI5NCA3OTYuNDY4IDQxMS43MjFDNzk2LjgzMSA0MDkuMjIxIDc5NS45MDQgNDA3Ljg5MSA3OTQuNDkzIDQwNi4wNzZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K' />
+    </picture>
+    <div class="circle"></div>
+  </div>
+
+</body>
+
+</html>
